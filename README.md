@@ -14,8 +14,6 @@ The Gnomon Platform is built to address four fundamental problems that come up w
 | **Agent behaviour.** A confident report can rest on a check that never ran. | The harness records every action it takes with its source, status is reported from evidence about the live object, and every change is reviewed by someone who did not write it. |
 | **Synthesis.** What a decision needs is scattered across many documents. | Decisions, specs and the links between them form one graph that factlattice-engine can follow, so an agent can gather what bears on a choice. |
 
-The results are expected, not yet measured.
-
 The Gnomon design principles ([design-principles](https://github.com/740Dave/gnomon/blob/main/docs/design-principles.md)) also describe the pillars of outstanding teams that the platform builds on (among them compelling purpose, psychological safety, and complementary strengths between the human and the agents) and the principles of the pilot's experience. If you find Gnomon useful and are curious about its approach to human-AI collaboration, that document is worth a read.
 
 ## The projects that make up the Gnomon Platform
