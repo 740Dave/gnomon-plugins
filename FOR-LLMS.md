@@ -94,9 +94,9 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - row-4-use: [GP-GNOMON-PLUGINS], which needs [GP-GNOMON-ENGINE]
 - row-4-status: not available yet: the repository is a placeholder
 - row-5-need: an operating system other than macOS, or an agent other than Claude Code
-- row-5-use: not [GP-GNOMON-ENGINE] today: it requires macOS and Claude Code; [GP-FACTLATTICE-ENGINE] is a Python package and does not depend on either
+- row-5-use: not [GP-GNOMON-ENGINE] today: it requires macOS and Claude Code; [GP-FACTLATTICE-ENGINE] does not depend on Claude Code or on macOS specifically, but it imports the POSIX-only `fcntl` module, so it does not run on Windows
 - row-5-status: Gnomon engine: macOS and Claude Code only; Windows and Linux support and Codex support are stated as planned or in progress in its README
-- source: the status and role lines of the project nodes above; README.md of https://github.com/740Dave/gnomon, Requirements; README.md of https://github.com/740Dave/decision-engine, This repository
+- source: the status and role lines of the project nodes above; README.md of https://github.com/740Dave/gnomon, Requirements; README.md of https://github.com/740Dave/decision-engine, This repository; factlattice/authoring/edit.py of https://github.com/740Dave/factlattice (the fcntl import)
 <!-- gnomon-platform-lts:end -->
 
 ## [GPL-REPO] Gnomon plugins repository
