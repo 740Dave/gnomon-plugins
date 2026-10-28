@@ -83,7 +83,7 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - rule: read the rows in order; use the first row whose need matches; the status column says whether the project can be used today
 - row-1-need: only a structured way for agents to ask a human for decisions, and a record of the answers
 - row-1-use: [GP-DECISION-ENGINE]; it writes plain FactLattice files, and [GP-FACTLATTICE-ENGINE] is optional, for querying them
-- row-1-status: not available yet: the repository is a placeholder; the planned design is stated in its README
+- row-1-status: not available yet: the repository is a placeholder
 - row-2-need: only a memory graph agents can query, traverse and write, kept as plain-text files
 - row-2-use: [GP-FACTLATTICE-ENGINE] alone, as a Python library, a command line, or an MCP server registered in an MCP client; no other platform project is needed
 - row-2-status: draft release
@@ -94,7 +94,7 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - row-4-use: [GP-GNOMON-PLUGINS], which needs [GP-GNOMON-ENGINE]
 - row-4-status: not available yet: the repository is a placeholder
 - row-5-need: an operating system other than macOS, or an agent other than Claude Code
-- row-5-use: not [GP-GNOMON-ENGINE] today: it requires macOS and Claude Code; [GP-FACTLATTICE-ENGINE] does not depend on Claude Code or on macOS specifically, but it imports the POSIX-only `fcntl` module, so it does not run on Windows
+- row-5-use: not [GP-GNOMON-ENGINE] today: it requires macOS and Claude Code; [GP-FACTLATTICE-ENGINE] does not depend on Claude Code; its MCP server, `call` command line and typed writers import the POSIX-only `fcntl` module, so they cannot run on Windows; its optional always-on embedder uses launchd, which is macOS only; the repository records no testing outside macOS
 - row-5-status: Gnomon engine: macOS and Claude Code only; Windows and Linux support and Codex support are stated as planned or in progress in its README
 - source: the status and role lines of the project nodes above; README.md of https://github.com/740Dave/gnomon, Requirements; README.md of https://github.com/740Dave/decision-engine, This repository; factlattice/authoring/edit.py of https://github.com/740Dave/factlattice (the fcntl import)
 <!-- gnomon-platform-lts:end -->
