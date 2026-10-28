@@ -24,7 +24,7 @@ The Gnomon design principles ([design-principles](https://github.com/740Dave/gno
 |---|---|---|
 | **Gnomon engine:** The heart of the platform, and required for the full experience | The harness that runs the team, and the web dashboard you, the pilot, use to lead it. | https://github.com/740Dave/gnomon |
 | **factlattice-engine:** A service that reads static FactLattice (*.lts) files to form a queryable and traversable graph that is accessible via MCP interfaces. | The team's memory and shared knowledge. Agent definitions embed factlattice-engine queries for essential knowledge; agents query anything else when they need it, and can update their own or the team's shared memory graph in real time. | https://github.com/740Dave/factlattice |
-| **DSD engine** (decision-support documents) and decisions-made graph | A single, consistent way for multiple agents to ask you for decisions, with every decision you make stored persistently in FactLattice files that factlattice-engine can query. | https://github.com/740Dave/dsd-engine |
+| **Decision engine:** decision-support documents (DSDs) and the decisions-made graph | A single, consistent way for multiple agents to ask you for decisions, with every decision you make stored persistently in FactLattice files that factlattice-engine can query. | https://github.com/740Dave/decision-engine |
 | **Gnomon plugins:** Gnomon supports platform-wide plugins and workspace-specific plugins. | A library of optional, platform-wide capability enhancements. Workspace-specific plugins are typically developed by users to meet a particular project's needs. | https://github.com/740Dave/gnomon-plugins |
 
 <!-- gnomon-platform-opening:end -->
