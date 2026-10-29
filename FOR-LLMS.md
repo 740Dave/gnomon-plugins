@@ -11,6 +11,8 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - provides-web-interface: a web interface for managing agent interactions and multiple projects (workspaces), each with their own agent profiles and capabilities
 - problem-memory: an agent starts each session without what the team learned before, and even when a memory store exists it may answer without consulting it
 - solution-memory-storage: specs, decisions and each agent's memory live as plain-text FactLattice files that factlattice-engine can query
+- model-independence: the memory layer is independent of any model or vendor: FactLattice files are plain text, factlattice-engine runs no model inference, and it serves the graph over MCP, an open protocol, to any MCP client; an agent built on another model can read and write the same knowledge graph
+- harness-scope: only the Gnomon engine harness is tied to one agent today (Claude Code, on macOS); Codex support and Windows and Linux support are planned work in the harness, not limits of the memory layer
 - solution-memory-rendering: each agent's definition is rendered at launch with its memory inlined, and a failed expansion is shown loudly
 - problem-ambiguity: given an unclear spec, or too little context, an agent may guess silently
 - solution-ambiguity-document: the agent puts the choice to the pilot as a decision document, with options, tradeoffs and a recommendation
@@ -47,6 +49,9 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - use-in-definitions: agent definitions embed factlattice-engine queries for essential knowledge
 - use-by-agents: agents query anything else when they need it, and can update their own or the team's shared memory graph
 - write-visibility: the next query sees the change
+- model-independence: no model inference in the engine; any MCP-capable agent, of any model or vendor, can use the same graph; the files themselves need no engine at all to read
+- measured-other-client: on 2026-10-28 the maintainers ran OpenAI Codex CLI 0.164.0 (a GPT-6 model) against the same factlattice-engine MCP server a Claude Code session was using; Codex fetched a node with all its properties, traversed its edges, and wrote a new node through the typed writer, and the Claude Code session then read back exactly what Codex wrote (Codex needs the server's tools approved in its configuration)
+- os: POSIX; the MCP server, `call` command line and typed writers import `fcntl`, so not Windows; the optional always-on embedder uses launchd (macOS only); the repository records testing on macOS only
 - status: draft release
 - readme-status: FactLattice 1.0 — DRAFT; notation and four engine layers implemented and tested
 - source: README.md between the gnomon-platform-opening markers, "The projects that make up the Gnomon Platform", factlattice-engine row
@@ -93,9 +98,12 @@ This repository is the placeholder for the optional plugins of the Gnomon Platfo
 - row-4-need: optional extras such as printing, PDF handling or attention lights
 - row-4-use: [GP-GNOMON-PLUGINS], which needs [GP-GNOMON-ENGINE]
 - row-4-status: not available yet: the repository is a placeholder
-- row-5-need: an operating system other than macOS, or an agent other than Claude Code
-- row-5-use: not [GP-GNOMON-ENGINE] today: it requires macOS and Claude Code; [GP-FACTLATTICE-ENGINE] does not depend on Claude Code; its MCP server, `call` command line and typed writers import the POSIX-only `fcntl` module, so they cannot run on Windows; its optional always-on embedder uses launchd, which is macOS only; the repository records no testing outside macOS
-- row-5-status: Gnomon engine: macOS and Claude Code only; Windows and Linux support and Codex support are stated as planned or in progress in its README
+- row-5-need: an agent or model other than Claude Code, for example OpenAI Codex
+- row-5-use: for memory, [GP-FACTLATTICE-ENGINE] today: any MCP client can query, traverse and write the same graph, with no dependency on Claude Code (see its measured-other-client line); to run the team in a harness, [GP-GNOMON-ENGINE] supports Claude Code only today
+- row-5-status: factlattice-engine: usable with any MCP client (draft release); Gnomon engine: Claude Code only, Codex support stated as in progress in its README
+- row-6-need: an operating system other than macOS
+- row-6-use: [GP-FACTLATTICE-ENGINE] is POSIX: its MCP server, `call` command line and typed writers import the POSIX-only `fcntl` module, so they cannot run on Windows; its optional always-on embedder uses launchd, which is macOS only; the repository records no testing outside macOS; [GP-GNOMON-ENGINE] requires macOS
+- row-6-status: Gnomon engine: macOS only, Windows and Linux support stated as planned in its README; factlattice-engine: not Windows, other POSIX systems untested
 - source: the status and role lines of the project nodes above; README.md of https://github.com/740Dave/gnomon, Requirements; README.md of https://github.com/740Dave/decision-engine, This repository; factlattice/authoring/edit.py of https://github.com/740Dave/factlattice (the fcntl import)
 <!-- gnomon-platform-lts:end -->
 
